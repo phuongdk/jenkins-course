@@ -19,7 +19,6 @@ pipeline {
                 sh '''#!/usr/bin/env bash
                 whoami
                 echo "123 test"
-                sudo usermod -aG docker jenkins
                 cd app_code
                 docker login -u ${DOCKER_REGISTRY_USERNAME} -p ${DOCKER_REGISTRY_PASSWORD}
                 docker build --tag "${REGISTRY_NAME}/nodejs-demo:${BUILD_NUMBER}" .
